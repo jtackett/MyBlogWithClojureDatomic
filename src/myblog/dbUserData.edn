@@ -1,0 +1,25 @@
+[
+
+
+{:db/id #db/id [:db.part/user]
+  :user/username "John Arroyo"
+  :user/password "Washington"}
+
+ {:db/id #db/id [:db.part/user]
+  :user/username "Bruce Wayne"
+  :user/password "Batman"}
+
+
+;;Need to generalize this piece and put into the "add post" method
+
+ {:db/id #db/id [:db.part/user]
+  :posts/username "Bruce Wayne"
+  :posts/title "The first post"
+  :posts/body "Hello this world"}
+
+  {:db/id #db/id [:db.part/user]
+  :posts/username "Bruce Wayne"
+  :posts/title "The second post"
+  :posts/body "Hello this world"}
+
+ ]
