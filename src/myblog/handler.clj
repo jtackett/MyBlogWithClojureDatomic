@@ -46,12 +46,14 @@
              [?c :user/username ?u]] (d/db conn) username))
 
 (defn authenticated? [username pass]
-        ;I used first to get inside the persistent vectors
+      ;I def user here so that I can find the right admin-blog-page
+  (def user username)
+          ;I used first to get inside the persistent vectors
     (and (some #(= username (first %)) (find-usernames))
          (= pass (ffirst(find-password username)))))
 
 ;;Defining routes
-;; GET then "/whatever" is the URL extension
+;; GET "/whatever" is the URL extension
 (defroutes public-routes
   (GET "/" [] (views/main-page))
   (route/resources "/")
@@ -59,7 +61,9 @@
 
 (defroutes protected-routes
     ;admin-blog-page is in views and returns posts
-  (GET "/admin" [] (views/admin-blog-page))
+    ; This needs to capture the username inputed into authenticated?
+    ; NEEDS UPDATE
+  (GET "/admin" [] (views/admin-blog-page user conn))
   )
 
 (defroutes app-routes
