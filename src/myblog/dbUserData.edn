@@ -17,9 +17,13 @@
   :posts/title "The first post"
   :posts/body "Hello this world"}
 
-  {:db/id #db/id [:db.part/user]
+ {:db/id #db/id [:db.part/user]
   :posts/username "Bruce Wayne"
   :posts/title "The second post"
-  :posts/body "Hello this world"}
+  :posts/body "Why multiple returns???"}
 
+ {:db/id #db/id [:db.part/user]
+  :posts/username "John Arroyo"
+  :posts/title "The second post"
+  :posts/body "Why multiple returns???"}
  ]
